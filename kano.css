@@ -701,6 +701,13 @@ blockquote {
     padding: 1rem 0;
 }
 
+.req-star {
+    color: var(--accent);
+    font-size: 0.55rem;
+    margin-left: 2px;
+    vertical-align: super;
+}
+
 .form-field label {
     font-family: var(--mono);
     font-size: 0.6rem;
