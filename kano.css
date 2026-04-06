@@ -701,10 +701,10 @@ blockquote {
     padding: 1rem 0;
 }
 
-.req-star {
+.form-field label::after {
+    content: ' *';
     color: var(--accent);
-    font-size: 0.55rem;
-    margin-left: 2px;
+    font-size: 0.5rem;
     vertical-align: super;
 }
 
