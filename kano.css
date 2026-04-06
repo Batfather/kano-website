@@ -1043,6 +1043,7 @@ blockquote {
 
     .service-item,
     .service-item.indent-right {
+        width: 100%;
         max-width: 100%;
         align-self: auto;
     }
