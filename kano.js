@@ -12,7 +12,7 @@ const LANG = {
   en: {
     nav_about:      'ABOUT',
     nav_epher:      'MANIFESTO',
-    nav_services:   'SERVICES',
+    nav_services:   'УСЛУГИ',
     nav_process:    'PROCESS',
     nav_contact:    'CONTACT',
 
