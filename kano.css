@@ -904,6 +904,9 @@ blockquote {
     transition: opacity 0.3s;
     line-height: 1;
     writing-mode: horizontal-tb;
+    width: 1.6rem;
+    text-align: center;
+    display: block;
 }
 
 .sn-item.active {
