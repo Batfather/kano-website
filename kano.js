@@ -131,7 +131,7 @@ const LANG = {
 };
 
 // ── State ──────────────────────────────────────────────────────────────────
-let currentLang = localStorage.getItem('kano_lang') || 'en';
+let currentLang = localStorage.getItem('kano_lang') || 'ru';
 
 // ── Apply translations ─────────────────────────────────────────────────────
 function applyLang(lang) {
@@ -232,35 +232,51 @@ function closeMobile() {
 })();
 
 // ── Contact form ──────────────────────────────────────────────────────────
-function handleSubmit(e) {
+// Replace FORMSPREE_ID with your form ID from formspree.io (e.g. "xabcdefg")
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xqegwnbo';
+
+async function handleSubmit(e) {
   e.preventDefault();
   const email   = document.getElementById('emailInput').value.trim();
   const company = document.getElementById('companyInput').value.trim();
   const message = document.getElementById('messageInput').value.trim();
 
-  const body = [
-    company ? `Company: ${company}` : '',
-    `From: ${email}`,
-    '',
-    message,
-  ].filter(Boolean).join('\n');
-
-  const mailto = `mailto:eugene.koltsov@protonmail.com`
-    + `?subject=${encodeURIComponent('KANO INQUIRY')}`
-    + `&body=${encodeURIComponent(body)}`;
-
-  window.location.href = mailto;
-
   const btn  = document.getElementById('submitBtn');
   const span = btn.querySelector('span');
-  span.textContent = currentLang === 'en' ? 'SENT ✓' : 'ОТПРАВЛЕНО ✓';
   btn.disabled = true;
-  setTimeout(() => {
-    span.dataset.i18n = 'form_send';
-    span.textContent = LANG[currentLang].form_send;
-    btn.disabled = false;
-    e.target.reset();
-  }, 3000);
+  span.textContent = '...';
+
+  try {
+    const res = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email, company, message }),
+    });
+
+    if (res.ok) {
+      span.textContent = currentLang === 'en' ? 'SENT ✓' : 'ОТПРАВЛЕНО ✓';
+      setTimeout(() => {
+        span.dataset.i18n = 'form_send';
+        span.textContent = LANG[currentLang].form_send;
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    } else {
+      span.textContent = currentLang === 'en' ? 'ERROR — TRY AGAIN' : 'ОШИБКА — ПОПРОБУЙ ЕЩЁ';
+      setTimeout(() => {
+        span.dataset.i18n = 'form_send';
+        span.textContent = LANG[currentLang].form_send;
+        btn.disabled = false;
+      }, 3000);
+    }
+  } catch {
+    span.textContent = currentLang === 'en' ? 'ERROR — TRY AGAIN' : 'ОШИБКА — ПОПРОБУЙ ЕЩЁ';
+    setTimeout(() => {
+      span.dataset.i18n = 'form_send';
+      span.textContent = LANG[currentLang].form_send;
+      btn.disabled = false;
+    }, 3000);
+  }
 }
 
 // ── Side nav: update active section on scroll ─────────────────────────────

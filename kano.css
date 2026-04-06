@@ -96,7 +96,8 @@ em { font-style: italic; }
 
 .main-nav a:hover { opacity: 1; }
 
-.lang-btn {
+.lang-btn { display: none; }
+.lang-btn-hidden {
     background: none;
     border: 1px solid var(--ink);
     color: var(--ink);
@@ -459,7 +460,7 @@ main {
 .service-list {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 2rem;
 }
 
 .service-item {
@@ -470,7 +471,8 @@ main {
 
 .service-item.indent-right {
     align-self: flex-end;
-    max-width: 58%;
+    width: 62%;
+    max-width: 62%;
     text-align: left;
 }
 
@@ -543,8 +545,17 @@ main {
 /* ═══════════════════════════════════════════════════════════════════════════
    ABOUT
    ═══════════════════════════════════════════════════════════════════════════ */
+.about-corner {
+    width: fit-content;
+    max-width: 52%;
+}
+
+.about-corner .section-subtitle {
+    margin-bottom: 1.5rem;
+}
+
 .about-body-text {
-    max-width: 48%;
+    max-width: 100%;
     font-size: 1rem;
     color: var(--muted);
     line-height: 1.7;
