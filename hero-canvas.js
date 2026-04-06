@@ -38,7 +38,6 @@
   }
 
   const isDark = () => document.documentElement.dataset.theme === 'dark';
-  const BG  = () => isDark() ? '#0f0f0f' : '#fdfdfd';
   const INK = () => isDark() ? '210,210,210' : '22,22,22';
 
   const N_H  = 72;   // horizontal iso-lines
@@ -131,10 +130,10 @@
     const rz  = p.y * sX + p.z * cX;
     const rx2 = p.x * cZ - ry * sZ;
     const ry2 = p.x * sZ + ry * cZ;
-    const scale = 1.65 + rz * 0.0005;
+    const scale = 1.45 + rz * 0.0004;
     return {
       sx: W * 0.80 + rx2 * scale,
-      sy: H * 0.36 + ry2 * scale,
+      sy: H * 0.50 + ry2 * scale,
     };
   }
 
@@ -203,8 +202,7 @@
 
   /* ── Draw ────────────────────────────────────────────────────────────────── */
   function draw() {
-    cx.fillStyle = BG();
-    cx.fillRect(0, 0, W, H);
+    cx.clearRect(0, 0, W, H);
 
     const ink = INK();
     cx.lineCap = 'round';
@@ -250,14 +248,10 @@
   function init() {
     cx = cv.getContext('2d');
     resize();
-    cx.fillStyle = BG(); cx.fillRect(0, 0, W, H);
     loop();
   }
 
   new ResizeObserver(resize).observe(cv.parentElement);
-  document.getElementById('themeToggle')?.addEventListener('click', () => {
-    setTimeout(() => { if (cx) { cx.fillStyle = BG(); cx.fillRect(0, 0, W, H); } }, 30);
-  });
 
   init();
 })();

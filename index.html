@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KANO.STUDIO — Ethical AI Agency</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Golos+Text:wght@400;500;700&family=Martian+Mono:wght@300;400;500&family=PT+Root+UI:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="kano.css">
+</head>
+<body>
+
+    <div class="grid-overlay"></div>
+
+    <!-- Fixed side nav indicator -->
+    <nav class="side-nav" id="sideNav" aria-hidden="true">
+        <a href="#hero"     class="sn-item active" data-section="hero">00</a>
+        <a href="#about"    class="sn-item" data-section="about">01</a>
+        <a href="#epher"    class="sn-item" data-section="epher">~</a>
+        <a href="#services" class="sn-item" data-section="services">02</a>
+        <a href="#process"  class="sn-item" data-section="process">03</a>
+        <a href="#contact"  class="sn-item" data-section="contact">04</a>
+    </nav>
+
+    <!-- ═══ HEADER ══════════════════════════════════════════════════════════ -->
+    <header class="main-header">
+        <a href="#" class="logo">
+            <img src="public/hand.png" alt="Kano" class="logo-hand">
+            <span>KANO.STUDIO</span>
+        </a>
+        <nav class="main-nav">
+            <a href="#about"     data-i18n="nav_about">ABOUT</a>
+            <a href="#epher"     data-i18n="nav_epher">MANIFESTO</a>
+            <a href="#services"  data-i18n="nav_services">SERVICES</a>
+            <a href="#process"   data-i18n="nav_process">PROCESS</a>
+            <a href="#contact"   data-i18n="nav_contact">CONTACT</a>
+            <button class="lang-btn" id="langToggle">RU</button>
+            <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">☽</button>
+        </nav>
+        <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span>
+        </button>
+    </header>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#about"     data-i18n="nav_about"    onclick="closeMobile()">ABOUT</a>
+        <a href="#epher"     data-i18n="nav_epher"    onclick="closeMobile()">MANIFESTO</a>
+        <a href="#services"  data-i18n="nav_services" onclick="closeMobile()">SERVICES</a>
+        <a href="#process"   data-i18n="nav_process"  onclick="closeMobile()">PROCESS</a>
+        <a href="#contact"   data-i18n="nav_contact"  onclick="closeMobile()">CONTACT</a>
+    </div>
+
+    <main>
+
+        <!-- ═══ HERO ═════════════════════════════════════════════════════════ -->
+        <section id="hero">
+            <canvas id="heroCanvas" aria-hidden="true"></canvas>
+            <div class="hero-content">
+            <div class="status-line">
+                <span id="session-id">INIT_SESSION...</span>
+                <span>STATUS: OPERATIONAL</span>
+            </div>
+
+            <div class="hero-tag">[KANO.STUDIO · EST. 2025]</div>
+
+            <div class="hero-title-block">
+                <h1>kano.<br><span class="indent">STUDIO</span></h1>
+                <p class="hero-sub">epher AI.</p>
+                <p class="hero-sub hero-sub--second">do more with less</p>
+            </div>
+
+            <div class="scroll-hint">
+                <span data-i18n="scroll">SCROLL</span>
+                <div class="scroll-line"></div>
+            </div>
+            </div><!-- /hero-content -->
+        </section>
+
+        <!-- Ticker separator -->
+        <div class="ticker" aria-hidden="true">
+            <div class="ticker-track">
+                <span>EPHER AI · KANO.STUDIO · RESPONSIBLE INNOVATION · INDIE STUDIO · AI DEVELOPMENT · AI INTEGRATION · AI EDUCATION · AI CONSULTING · HUMAN-CENTERED · BUSINESS-ORIENTED&nbsp;</span>
+                <span>EPHER AI · KANO.STUDIO · RESPONSIBLE INNOVATION · INDIE STUDIO · AI DEVELOPMENT · AI INTEGRATION · AI EDUCATION · AI CONSULTING · HUMAN-CENTERED · BUSINESS-ORIENTED&nbsp;</span>
+            </div>
+        </div>
+
+        <!-- ═══ ABOUT ══════════════════════════════════════════════════════════ -->
+        <section id="about" class="content-section alt-bg">
+            <div class="section-meta">
+                <span class="section-label">[01]</span>
+                <span class="section-name" data-i18n="nav_about">ABOUT</span>
+                <span class="section-count">01 KANO.STUDIO</span>
+            </div>
+
+            <div class="corner-block">
+                <h2 class="section-title" data-i18n="about_title">О нас</h2>
+                <p class="section-subtitle" data-i18n="about_desc1">Мы — небольшая технологическая студия, занимающаяся разработкой и внедрением AI проектов в существующие бизнесы и направления.</p>
+                <p class="about-body-text" data-i18n="about_desc2">Наша студия выросла из идеи, что технологии в действительности могут служить миру и человечеству. В связи с быстрым развитием технологий в современном мире человек и индустрия просто не поспевает за ними. Мы берём на себя миссию сделать технологии, и в первую очередь ИИ, доступным для человека и полезным для бизнеса.</p>
+                <p class="about-quote" data-i18n="about_quote">«Сохранив суверенитет человеческого труда и двигаясь к принципу do more with less.»</p>
+            </div>
+        </section>
+
+        <!-- ═══ EPHER AI ═══════════════════════════════════════════════════════ -->
+        <section id="epher" class="content-section epher-section">
+            <div class="section-meta">
+                <span class="section-label">[02]</span>
+                <span class="section-name" data-i18n="epher_name">EPHER AI</span>
+                <span class="section-count" data-i18n="epher_count">02 MANIFESTO</span>
+            </div>
+
+            <div class="corner-block epher-corner">
+                <h2 class="section-title epher-title" data-i18n="epher_title">do more<br>with less</h2>
+
+                <div class="epher-body">
+                    <p data-i18n="epher_p1">Бизнес — это система. У любой системы есть результат. Любую систему можно усложнить, а можно упростить. Любой результат можно ухудшить, а можно улучшить.</p>
+                    <p data-i18n="epher_p2">Эфемерализация — термин, придуманный Бакминстером Фуллером, описывающий способность технологического прогресса делать всё больше и больше с меньшим количеством ресурсов, пока в конечном итоге можно будет делать практически всё из ничего.</p>
+                    <p data-i18n="epher_p3">Мы адаптировали этот термин к современному AI и создали подход <em>Epher AI</em> — непрерывное стремление к упрощению системы параллельно с улучшением результата.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SERVICES ══════════════════════════════════════════════════════ -->
+        <section id="services" class="content-section alt-bg">
+            <div class="section-meta">
+                <span class="section-label">[03]</span>
+                <span class="section-name" data-i18n="nav_services">SERVICES</span>
+                <span class="section-count">03 SERVICES</span>
+            </div>
+
+            <h2 class="section-title" data-i18n="srv_title">What we do</h2>
+            <p class="section-subtitle" data-i18n="srv_sub">AI solutions built for real business needs.</p>
+
+            <div class="service-list">
+
+                <article class="service-item crop-mark">
+                    <div class="srv-meta">
+                        <span class="srv-id">#S-001</span>
+                        <span class="srv-name" data-i18n="srv1_title">РАЗРАБОТКА</span>
+                        <span class="srv-tags">СИСТЕМЫ · СЕРВИСЫ · АРХИТЕКТУРА</span>
+                    </div>
+                    <p class="srv-desc" data-i18n="srv1_desc">
+                        Создаём работающие системы и сервисы на базе современных технологий под конкретный запрос или задачу.
+                    </p>
+                </article>
+
+                <article class="service-item indent-right crop-mark">
+                    <div class="srv-meta">
+                        <span class="srv-id">#S-002</span>
+                        <span class="srv-name" data-i18n="srv2_title">ВНЕДРЕНИЕ</span>
+                        <span class="srv-tags">ИНТЕГРАЦИЯ · ВОРКФЛОУ · АВТОМАТИЗАЦИЯ</span>
+                    </div>
+                    <p class="srv-desc" data-i18n="srv2_desc">
+                        Внедряем продукты и решения в существующие бизнес-процессы, оптимизируя воркфлоу и работая на результат.
+                    </p>
+                </article>
+
+                <article class="service-item indent-right crop-mark">
+                    <div class="srv-meta">
+                        <span class="srv-id">#S-003</span>
+                        <span class="srv-name" data-i18n="srv3_title">ОБУЧЕНИЕ</span>
+                        <span class="srv-tags">КОНСУЛЬТАЦИИ · ВОРКШОПЫ · ОБУЧЕНИЕ</span>
+                    </div>
+                    <p class="srv-desc" data-i18n="srv3_desc">
+                        Обучаем и консультируем по всем аспектам AI и адаптации бизнеса под его внедрение.
+                    </p>
+                </article>
+
+                <article class="service-item crop-mark">
+                    <div class="srv-meta">
+                        <span class="srv-id">#S-004</span>
+                        <span class="srv-name" data-i18n="srv4_title">ПОДДЕРЖКА</span>
+                        <span class="srv-tags">СОПРОВОЖДЕНИЕ · МОНИТОРИНГ · СТАБИЛЬНОСТЬ</span>
+                    </div>
+                    <p class="srv-desc" data-i18n="srv4_desc">
+                        Поддерживаем и сопровождаем созданные решения в первые месяцы после внедрения.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ═══ PROCESS ═══════════════════════════════════════════════════════ -->
+        <section id="process" class="content-section grid-bg">
+            <div class="section-meta">
+                <span class="section-label">[04]</span>
+                <span class="section-name" data-i18n="nav_process">PROCESS</span>
+                <span class="section-count">04 STEPS</span>
+            </div>
+
+            <h2 class="section-title" data-i18n="proc_title">How we work</h2>
+            <p class="section-subtitle" data-i18n="proc_sub">Transparency at every step.</p>
+
+            <div class="process-list">
+
+                <div class="proc-item">
+                    <span class="proc-num">01</span>
+                    <div class="proc-body">
+                        <h3 data-i18n="proc1_title">DISCOVERY</h3>
+                        <p data-i18n="proc1_desc">Внимательно выслушиваем клиента, изучаем специфику бизнеса, собираем всю необходимую информацию.</p>
+                    </div>
+                </div>
+
+                <div class="proc-item">
+                    <span class="proc-num">02</span>
+                    <div class="proc-body">
+                        <h3 data-i18n="proc2_title">STRATEGY</h3>
+                        <p data-i18n="proc2_desc">В течение 1–2 недель готовим план проекта, проводим дополнительные исследования, отмечаем риски, описываем архитектуру системы. Каждый этап и каждый нюанс обозначаем клиенту в полной мере.</p>
+                    </div>
+                </div>
+
+                <div class="proc-item">
+                    <span class="proc-num">03</span>
+                    <div class="proc-body">
+                        <h3 data-i18n="proc3_title">DEVELOPMENT</h3>
+                        <p data-i18n="proc3_desc">Беремся за работу и движемся по плану. Если в процессе возникают нюансы (а они как правило возникают) — адаптируемся. Берём на себя ответственность за весь процесс реализации и внедрения.</p>
+                    </div>
+                </div>
+
+                <div class="proc-item">
+                    <span class="proc-num">04</span>
+                    <div class="proc-body">
+                        <h3 data-i18n="proc4_title">EDUCATION</h3>
+                        <p data-i18n="proc4_desc">Осуществляем поддержку решения после сдачи. Время зависит от проекта.</p>
+                    </div>
+                </div>
+
+                <div class="proc-item">
+                    <span class="proc-num">05</span>
+                    <div class="proc-body">
+                        <h3 data-i18n="proc5_title">EVOLUTION</h3>
+                        <p data-i18n="proc5_desc">AI системы улучшаются со временем. Обеспечиваем поддержку, мониторинг и оптимизацию для постоянного соответствия вашим целям.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══ CONTACT ════════════════════════════════════════════════════════ -->
+        <section id="contact" class="content-section alt-bg">
+            <div class="section-meta">
+                <span class="section-label">[05]</span>
+                <span class="section-name" data-i18n="nav_contact">CONTACT</span>
+                <span class="section-count">05 OPEN FOR PROJECTS</span>
+            </div>
+
+            <div class="contact-center">
+                <h2 class="section-title" data-i18n="contact_title">Tell us about your project</h2>
+
+                <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+                    <div class="form-field">
+                        <label data-i18n="form_email">EMAIL</label>
+                        <input type="email" placeholder="your@email.com" required id="emailInput">
+                    </div>
+                    <div class="form-field">
+                        <label data-i18n="form_company">COMPANY</label>
+                        <input type="text" placeholder="—" id="companyInput">
+                    </div>
+                    <div class="form-field">
+                        <label data-i18n="form_msg">MESSAGE</label>
+                        <textarea rows="4" placeholder="…" id="messageInput"></textarea>
+                    </div>
+                    <div class="form-footer">
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span data-i18n="form_send">ОТПРАВИТЬ →</span>
+                        </button>
+                        <a href="https://t.me/eugenekoltsov" target="_blank" rel="noopener" class="tg-link" aria-label="Telegram">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.708-1.67 7.87c-.125.558-.453.694-.918.432l-2.54-1.873-1.226 1.18c-.135.135-.249.249-.511.249l.183-2.588 4.712-4.254c.205-.183-.044-.284-.317-.101L8.15 14.81l-2.5-.78c-.543-.17-.554-.543.114-.803l9.73-3.752c.452-.163.848.1.436.233z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══ CLOSING ══════════════════════════════════════════════════════════ -->
+    <section class="closing">
+        <div class="closing-card">
+            <img src="public/hand.png" alt="Kano" class="closing-hand">
+        </div>
+        <div class="closing-caption">
+            <span class="closing-name">kano<span>.</span></span>
+            <span class="closing-sub">studio</span>
+        </div>
+    </section>
+
+    <!-- ═══ FOOTER ════════════════════════════════════════════════════════════ -->
+    <footer class="main-footer">
+        <div class="footer-logo">
+            <img src="public/hand.png" alt="Kano" class="logo-hand">
+            <span>KANO.STUDIO</span>
+        </div>
+        <p class="footer-copy" data-i18n="footer_desc">
+            An indie AI studio building ethical solutions for businesses who believe<br>technology should serve humanity.
+        </p>
+        <div class="footer-bottom">
+            <span id="footer-year"></span> KANO.STUDIO — <span data-i18n="footer_rights">ALL RIGHTS RESERVED</span>
+        </div>
+    </footer>
+
+    <script src="kano.js"></script>
+    <script src="hero-canvas.js"></script>
+</body>
+</html>
