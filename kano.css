@@ -751,6 +751,12 @@ blockquote {
 
 .submit-btn:hover { color: var(--accent); border-color: var(--accent); }
 
+.social-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .tg-link {
     display: flex;
     align-items: center;
