@@ -45,6 +45,7 @@ const LANG = {
     about_title:    'About',
     about_desc1:    'Kano Studio is a one-person project.',
     about_desc2:    'I founded it in 2025, driven by the belief that technology can and should genuinely serve the world and humanity. In an era of rapid technological change, people and industries often struggle to keep pace. My mission is to make technology — and AI in particular — accessible to people and useful for business.',
+    about_desc3:    'In my work I use a network of AI agents I designed myself to deliver projects of any complexity.',
     about_quote:    'Preserving the sovereignty of human work, and moving toward the principle of do more with less.',
     values_title:   'OUR VALUES',
     val1_title:     'ETHICS FIRST',
@@ -110,6 +111,7 @@ const LANG = {
     about_title:    'О студии',
     about_desc1:    'Kano Studio - это проект одного человека.',
     about_desc2:    'Я основал его в 2025 году, основываясь на идее, что технологии в действительности могут и должны служить миру и человечеству. В связи со стремительным их развитием в современном мире человек и индустрия зачастую не успевают за ними. Моя миссия состоит в том, чтобы сделать их - технологии, и в первую очередь ИИ - доступными для человека и полезными для бизнеса.',
+    about_desc3:    'В своей работе я использую спроектированную мной сеть ИИ-агентов для реализации проектов любой сложности.',
     about_quote:    'Сохраняя суверенитет человеческого труда и двигаясь к принципу do more with less.',
 
     epher_name:     'EPHER AI',
