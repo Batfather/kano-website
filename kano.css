@@ -96,8 +96,7 @@ em { font-style: italic; }
 
 .main-nav a:hover { opacity: 1; }
 
-.lang-btn { display: none; }
-.lang-btn-hidden {
+.lang-btn {
     background: none;
     border: 1px solid var(--ink);
     color: var(--ink);
