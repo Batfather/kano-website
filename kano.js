@@ -10,7 +10,7 @@
 // ── i18n strings ───────────────────────────────────────────────────────────
 const LANG = {
   en: {
-    nav_about:      'ABOUT US',
+    nav_about:      'ABOUT',
     nav_epher:      'MANIFESTO',
     nav_services:   'SERVICES',
     nav_process:    'PROCESS',
@@ -44,13 +44,13 @@ const LANG = {
 
     about_title:    'About',
     about_desc1:    'Kano Studio is a one-person project.',
-    about_desc2:    'I founded it in 2025, driven by the belief that technology can and should genuinely serve the world and humanity. In an era of rapid technological change, people and industries often struggle to keep pace. My mission is to make technology — and AI in particular — accessible to people and useful for business.',
-    about_desc3:    'In my work I use a network of AI agents I designed myself to deliver projects of any complexity.',
+    about_desc2:    'I founded it in 2025, driven by the belief, that technology can and should genuinely serve the world and humanity. In an era of rapid technological change, people and industries often struggle to keep pace. My mission is to make technology - and AI in particular - accessible to people and useful for business.',
+    about_desc3:    '[In my work I use a network of AI agents I designed myself to deliver projects of any complexity.]',
     about_quote:    'Preserving the sovereignty of human work, and moving toward the principle of do more with less.',
 
     epher_name:     'EPHER AI',
     epher_count:    'MANIFESTO',
-    epher_title:    'do more<br>with less',
+    epher_title:    'do more with less',
     epher_p1:       'Business is a system. Every system has an output. Any system can be made more complex or more simple. Any output can be made worse or better.',
     epher_p2:       'Ephemeralization - a term coined by Buckminster Fuller - describes the ability of technological progress to do more and more with less and less, until eventually almost everything can be done with almost nothing.',
     epher_p3:       'I adapted this term to modern AI and created the <em>Epher AI</em> approach - a continuous drive to simplify the system while improving the result.',
