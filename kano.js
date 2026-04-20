@@ -10,7 +10,7 @@
 // ── i18n strings ───────────────────────────────────────────────────────────
 const LANG = {
   en: {
-    nav_about:      'ABOUT',
+    nav_about:      'ABOUT US',
     nav_epher:      'MANIFESTO',
     nav_services:   'УСЛУГИ',
     nav_process:    'PROCESS',
@@ -42,10 +42,10 @@ const LANG = {
     proc5_title:    'EVOLUTION',
     proc5_desc:     'AI systems improve over time. We provide ongoing support, monitoring, and optimisation to ensure continued alignment with your goals.',
 
-    about_title:    'A small studio with a large mission',
-    about_desc1:    'We are a boutique technology studio focused on developing and integrating AI into existing businesses and industries.',
-    about_desc2:    'Kano Studio grew from a belief that technology can genuinely serve the world and humanity. In an era of rapid technological change, people and industries are struggling to keep pace. We take on the mission of making technology - and AI in particular - accessible to people and useful for business.',
-    about_quote:    '"Preserving the sovereignty of human work,\nand moving toward the principle of do more with less."',
+    about_title:    'About',
+    about_desc1:    'Kano Studio is a one-person project.',
+    about_desc2:    'I founded it in 2025, driven by the belief that technology can and should genuinely serve the world and humanity. In an era of rapid technological change, people and industries often struggle to keep pace. My mission is to make technology — and AI in particular — accessible to people and useful for business.',
+    about_quote:    'Preserving the sovereignty of human work, and moving toward the principle of do more with less.',
     values_title:   'OUR VALUES',
     val1_title:     'ETHICS FIRST',
     val1_desc:      'Every solution considers its impact on users, society, and the environment. We refuse projects that conflict with our ethical standards.',
@@ -74,7 +74,7 @@ const LANG = {
   },
 
   ru: {
-    nav_about:      'О НАС',
+    nav_about:      'О СТУДИИ',
     nav_epher:      'МАНИФЕСТ',
     nav_services:   'СЕРВИСЫ',
     nav_process:    'ПРОЦЕСС',
@@ -107,10 +107,10 @@ const LANG = {
     proc5_desc:     'Мы на связи даже после завершения проекта. Поддержка осуществляется в оговоренном порядке в зависимости от специфики проекта.',
 
 
-    about_title:    'О нас',
-    about_desc1:    'Мы - небольшая технологическая студия, занимающаяся разработкой AI проектов и последующим их внедрением в существующие бизнесы и направления.',
-    about_desc2:    'Наша студия выросла из идеи, что технологии в действительности могут и должны служить миру и человечеству. В связи с быстрым развитием технологий в современном мире человек и индустрия просто не успевает за ними. Мы берём на себя миссию сделать технологии, и в первую очередь ИИ, доступными для человека и полезными для бизнеса.',
-    about_quote:    '«Сохранив суверенитет человеческого труда\nи двигаясь к принципу do more with less.»',
+    about_title:    'О студии',
+    about_desc1:    'Kano Studio — это проект одного человека.',
+    about_desc2:    'Я основал его в 2025 году, основываясь на идее, что технологии в действительности могут и должны служить миру и человечеству. В связи со стремительным их развитием в современном мире человек и индустрия зачастую не успевают за ними. Моя миссия состоит в том, чтобы сделать их — технологии, и в первую очередь ИИ — доступными для человека и полезными для бизнеса.',
+    about_quote:    'Сохраняя суверенитет человеческого труда и двигаясь к принципу do more with less.',
 
     epher_name:     'EPHER AI',
     epher_count:    'МАНИФЕСТ',
