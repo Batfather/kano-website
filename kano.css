@@ -545,13 +545,37 @@ main {
 /* ═══════════════════════════════════════════════════════════════════════════
    ABOUT
    ═══════════════════════════════════════════════════════════════════════════ */
+.about-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    justify-content: space-between;
+}
+
 .about-corner {
     width: fit-content;
     max-width: 52%;
+    flex-shrink: 0;
 }
 
 .about-corner .section-subtitle {
     margin-bottom: 1.5rem;
+}
+
+.about-photo-wrap {
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+.about-photo {
+    display: block;
+    width: 260px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(18%);
+    border: 1px solid var(--border);
 }
 
 .about-body-text {
@@ -1046,8 +1070,11 @@ blockquote {
    ═══════════════════════════════════════════════════════════════════════════ */
 @media (max-width: 900px) {
     .about-grid { grid-template-columns: 1fr; gap: 3.5rem; }
-
     .manifesto-grid { grid-template-columns: 1fr; max-width: 100%; }
+
+    .about-layout { flex-direction: column; gap: 2.5rem; }
+    .about-corner { max-width: 100%; }
+    .about-photo { width: 200px; }
 }
 
 @media (max-width: 640px) {
