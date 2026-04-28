@@ -188,7 +188,7 @@ main {
    HERO
    ═══════════════════════════════════════════════════════════════════════════ */
 #hero {
-    min-height: calc(100vh - var(--header-h));
+    min-height: calc(100dvh - var(--header-h));
     border-bottom: 1px solid var(--ink);
     position: relative;
     overflow: hidden;
@@ -213,8 +213,8 @@ main {
     position: relative;
     z-index: 1;
     padding: 2rem 2rem 3rem 4rem;
-    min-height: calc(68vh - var(--header-h));
-    height: calc(68vh - var(--header-h));
+    min-height: calc(68dvh - var(--header-h));
+    height: calc(68dvh - var(--header-h));
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
