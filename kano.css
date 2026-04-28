@@ -95,6 +95,7 @@ em { font-style: italic; }
 }
 
 .main-nav a:hover { opacity: 1; }
+.main-nav a.nav-active { opacity: 1; color: var(--accent); }
 
 .lang-btn {
     background: none;

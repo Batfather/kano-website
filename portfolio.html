@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KANO.STUDIO — Портфолио</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="public/hand.png">
+    <link rel="stylesheet" href="kano.css">
+    <style>
+        /* ── Portfolio-specific styles ───────────────────────────────────────── */
+        .portfolio-hero {
+            padding: 3rem 2rem 4rem 4rem;
+            border-bottom: 1px solid var(--ink);
+            background-color: var(--bg);
+            background-image:
+                linear-gradient(rgba(128,128,128,0.09) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(128,128,128,0.09) 1px, transparent 1px);
+            background-size: 80px 80px;
+            background-attachment: fixed;
+        }
+
+        .portfolio-hero .section-meta { margin-bottom: 2rem; }
+
+        .portfolio-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+
+        .case-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .case-article {
+            padding: 4rem 2rem 4rem 4rem;
+            border-bottom: 1px solid var(--ink);
+            position: relative;
+        }
+
+        .case-article.alt-bg { background-color: var(--soft); }
+
+        .case-meta-bar {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+            margin-bottom: 2.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .case-num { color: var(--accent); opacity: 1; }
+        .case-type { opacity: 1; }
+        .case-sector { margin-left: auto; }
+
+        .case-title {
+            font-size: clamp(1.4rem, 3vw, 2.4rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 0.6rem;
+        }
+
+        .case-task {
+            font-size: 0.9rem;
+            color: var(--muted);
+            font-family: var(--mono);
+            letter-spacing: 0.06em;
+            margin-bottom: 3rem;
+        }
+
+        .case-body {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr 1fr;
+            gap: 3rem;
+            max-width: 1100px;
+        }
+
+        .case-col-title {
+            font-family: var(--mono);
+            font-size: 0.6rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .case-col p {
+            font-size: 0.92rem;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .case-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .case-col ul li {
+            font-size: 0.92rem;
+            color: var(--muted);
+            line-height: 1.6;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .case-col ul li::before {
+            content: '—';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.75rem;
+        }
+
+        .case-result-stat {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .case-result-label {
+            font-size: 0.85rem;
+            color: var(--muted);
+            line-height: 1.55;
+            margin-bottom: 1.2rem;
+        }
+
+        @media (max-width: 900px) {
+            .case-body { grid-template-columns: 1fr; gap: 2rem; }
+            .case-article { padding: 3rem 1.5rem; }
+            .portfolio-hero { padding: 2rem 1.5rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ═══ HEADER ═══════════════════════════════════════════════════════════ -->
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <img src="public/hand.png" alt="Kano" class="logo-hand">
+            <span>KANO.STUDIO</span>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html#about"    data-i18n="nav_about">О СТУДИИ</a>
+            <a href="index.html#epher"    data-i18n="nav_epher">МАНИФЕСТ</a>
+            <a href="index.html#services" data-i18n="nav_services">УСЛУГИ</a>
+            <a href="index.html#process"  data-i18n="nav_process">ПРОЦЕСС</a>
+            <a href="portfolio.html"      class="nav-active">ПОРТФОЛИО</a>
+            <a href="index.html#contact"  data-i18n="nav_contact">КОНТАКТЫ</a>
+            <button class="lang-btn" id="langToggle">EN</button>
+            <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">☽</button>
+        </nav>
+        <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span>
+        </button>
+    </header>
+
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html#about"    onclick="closeMobile()">О СТУДИИ</a>
+        <a href="index.html#epher"    onclick="closeMobile()">МАНИФЕСТ</a>
+        <a href="index.html#services" onclick="closeMobile()">УСЛУГИ</a>
+        <a href="index.html#process"  onclick="closeMobile()">ПРОЦЕСС</a>
+        <a href="portfolio.html"      onclick="closeMobile()">ПОРТФОЛИО</a>
+        <a href="index.html#contact"  onclick="closeMobile()">КОНТАКТЫ</a>
+    </div>
+
+    <main>
+
+        <!-- ═══ HERO ═══════════════════════════════════════════════════════════ -->
+        <section class="portfolio-hero">
+            <div class="section-meta">
+                <span class="section-label">[~]</span>
+                <span class="section-name">KANO.STUDIO</span>
+                <span class="section-count">РАБОТЫ</span>
+            </div>
+            <h1>Портфолио</h1>
+        </section>
+
+        <!-- ═══ CASE 01 ════════════════════════════════════════════════════════ -->
+        <article class="case-article">
+            <div class="case-meta-bar">
+                <span class="case-num">#C-001</span>
+                <span class="case-type">КЛИЕНТСКИЙ ПРОЕКТ</span>
+                <span class="case-sector">M&A · ФИНАНСОВЫЙ КОНСАЛТИНГ</span>
+            </div>
+
+            <h2 class="case-title">Automated Outreach Pipeline</h2>
+            <p class="case-task">ЗАДАЧА: Автоматизация холодного аутрича</p>
+
+            <div class="case-body">
+                <div class="case-col">
+                    <p class="case-col-title">Контекст</p>
+                    <p>Американская M&A-компания вела холодный аутрич по базе в десятки тысяч потенциальных сделок. Один скаут вручную отправлял 20–30 персонализированных писем в день. Задача — перевести аутрич в промышленный режим без потери качества и персонализации.</p>
+                </div>
+
+                <div class="case-col">
+                    <p class="case-col-title">Что было сделано</p>
+                    <ul>
+                        <li>Обработка и сегментация базы контактов</li>
+                        <li>Автоматический AI-поиск данных и новостей о каждой компании</li>
+                        <li>Генерация персонализированных писем на основе собранных данных и сегментов</li>
+                        <li>Настройка последовательностей с автоматическими follow-up</li>
+                        <li>Прогрев почтовых ящиков для сохранения доставляемости и репутации домена</li>
+                        <li>Интерфейс управления — скаут работает только со стратегией и персонализацией, не с операционкой</li>
+                    </ul>
+                </div>
+
+                <div class="case-col">
+                    <p class="case-col-title">Результат</p>
+                    <div class="case-result-stat">×10</div>
+                    <p class="case-result-label">к объёму — с 20–30 писем в день до 200–300+ в автоматическом режиме с возможностью дальнейшего масштабирования</p>
+                    <p class="case-result-label">Open rate и reply rate сохранились на уровне ручного аутрича — персонализация не пострадала</p>
+                    <p class="case-result-label">Скаут полностью выведен из операционки — управляет системой, а не процессом</p>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- ═══ FOOTER ════════════════════════════════════════════════════════════ -->
+    <footer class="main-footer">
+        <div class="footer-logo">
+            <img src="public/hand.png" alt="Kano" class="logo-hand">
+            <span>KANO.STUDIO</span>
+        </div>
+        <div class="footer-bottom">
+            <span id="footer-year"></span> KANO.STUDIO — <span data-i18n="footer_rights">ВСЕ ПРАВА ЗАЩИЩЕНЫ</span>
+        </div>
+    </footer>
+
+    <script src="kano.js"></script>
+</body>
+</html>
