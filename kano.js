@@ -161,6 +161,7 @@ document.getElementById('footer-year').textContent =
 // ── Session ID animation ──────────────────────────────────────────────────
 (function animateSessionId() {
   const el = document.getElementById('session-id');
+  if (!el) return;
   const finalId = genSessionId();
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_·';
   let frame = 0;
@@ -309,6 +310,24 @@ document.getElementById('themeToggle').addEventListener('click', () => {
   localStorage.setItem('kano_theme', currentTheme);
   applyTheme(currentTheme);
 });
+
+// ── Instant anchor jump when navigating from another page ─────────────────
+// Browsers smooth-scroll to hash on load because html { scroll-behavior: smooth }.
+// We override that only on initial load if arriving from a different origin/page.
+(function instantAnchorOnLoad() {
+  if (!location.hash) return;
+  const from = document.referrer;
+  const sameOrigin = from && new URL(from).hostname === location.hostname;
+  const fromPortfolio = sameOrigin && new URL(from).pathname.includes('portfolio');
+  if (!fromPortfolio && !sameOrigin) return;
+  // Temporarily disable smooth scroll, jump, then restore
+  document.documentElement.style.scrollBehavior = 'auto';
+  const target = document.querySelector(location.hash);
+  if (target) target.scrollIntoView();
+  requestAnimationFrame(() => {
+    document.documentElement.style.scrollBehavior = '';
+  });
+})();
 
 // ── Init ──────────────────────────────────────────────────────────────────
 applyLang(currentLang);
