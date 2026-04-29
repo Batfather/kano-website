@@ -15,7 +15,7 @@ const LANG = {
     nav_services:   'SERVICES',
     nav_process:    'PROCESS',
     nav_contact:    'CONTACT',
-    nav_portfolio:  'PORTFOLIO',
+    nav_portfolio:  'ПРОЕКТЫ',
     nav_blog:       'BLOG',
 
     scroll:         'SCROLL',
@@ -73,7 +73,7 @@ const LANG = {
     nav_services:   'УСЛУГИ',
     nav_process:    'ПРОЦЕСС',
     nav_contact:    'КОНТАКТЫ',
-    nav_portfolio:  'ПОРТФОЛИО',
+    nav_portfolio:  'ПРОЕКТЫ',
     nav_blog:       'БЛОГ',
 
     scroll:         'SCROLL',
