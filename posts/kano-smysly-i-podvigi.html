@@ -89,6 +89,29 @@
             color: var(--ink);
         }
 
+        .post-img {
+            margin: 2.5rem 0 3rem;
+        }
+
+        .post-img img {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--border);
+            filter: grayscale(50%) brightness(1.02) contrast(0.98);
+            max-height: 480px;
+            object-fit: cover;
+            object-position: center 15%;
+        }
+
+        .post-img figcaption {
+            font-family: var(--mono);
+            font-size: 0.58rem;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            opacity: 0.5;
+            margin-top: 0.75rem;
+        }
+
         .post-footer-nav {
             margin-top: 5rem;
             padding-top: 2rem;
@@ -168,6 +191,11 @@
                     чтобы выразить то невыразимое, что я чувствую по отношению к своему детищу.
                     Но так как в простоте заложен самый глубокий смысл - я начну с простого.
                 </p>
+
+                <figure class="post-img">
+                    <img src="../public/photo.jpg" alt="Евгений Кольцов">
+                    <figcaption>ЕВГЕНИЙ КОЛЬЦОВ · KANO.STUDIO</figcaption>
+                </figure>
 
                 <p>
                     Kano Studio образовалась как результат моего личного потока идей, болей,
