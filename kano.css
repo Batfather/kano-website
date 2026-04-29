@@ -416,19 +416,19 @@ main {
     width: 100%;
     border: 1px solid var(--border);
     margin-top: 1.5rem;
+    background: var(--soft);
 }
 
 .hero-link {
     flex: 1;
     font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
     color: var(--ink);
-    opacity: 0.6;
     padding: 1.4rem 0;
     text-align: center;
     border-right: 1px solid var(--border);
-    transition: opacity 0.18s, background 0.18s, letter-spacing 0.18s;
+    transition: background 0.2s, color 0.2s, letter-spacing 0.2s;
     text-decoration: none;
     white-space: nowrap;
 }
@@ -436,9 +436,9 @@ main {
 .hero-link:last-child { border-right: none; }
 
 .hero-link:hover {
-    opacity: 1;
-    background: var(--soft);
-    letter-spacing: 0.2em;
+    background: var(--ink);
+    color: var(--bg);
+    letter-spacing: 0.22em;
 }
 
 /* About → blog link */
@@ -450,20 +450,20 @@ main {
     margin-top: 2rem;
     width: 100%;
     font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
     color: var(--ink);
-    opacity: 0.6;
     text-decoration: none;
     border: 1px solid var(--border);
     padding: 1.4rem 0;
-    transition: opacity 0.18s, background 0.18s, letter-spacing 0.18s;
+    background: var(--soft);
+    transition: background 0.2s, color 0.2s, letter-spacing 0.2s;
 }
 
 .about-blog-link:hover {
-    opacity: 1;
-    background: var(--soft);
-    letter-spacing: 0.22em;
+    background: var(--ink);
+    color: var(--bg);
+    letter-spacing: 0.24em;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
