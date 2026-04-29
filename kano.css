@@ -236,7 +236,7 @@ main {
 .hero-title-block {
     display: inline-flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     align-self: flex-start;
     position: relative;
     padding: 14px;
@@ -244,27 +244,29 @@ main {
     margin-bottom: 2rem;
 }
 
-.hero-title-block::before,
-.hero-title-block::after {
+.hero-title-block::before {
     content: '';
     position: absolute;
     width: 24px;
     height: 24px;
     opacity: 0.45;
-}
-
-.hero-title-block::before {
     top: 0;
     left: 0;
     border-top: 1px solid var(--ink);
     border-left: 1px solid var(--ink);
 }
 
-.hero-title-block::after {
+.hero-links::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    opacity: 0.45;
     bottom: 0;
     right: 0;
     border-bottom: 1px solid var(--ink);
     border-right: 1px solid var(--ink);
+    pointer-events: none;
 }
 
 /* ── Corner brackets for content sections ─────────────────────────────────── */
@@ -411,19 +413,19 @@ main {
 
 /* Hero nav links */
 .hero-links {
-    display: inline-flex;
-    align-self: flex-start;
+    display: flex;
+    position: relative;
     margin-top: 2rem;
     border: 1px solid var(--border);
-    background: var(--soft);
 }
 
 .hero-link {
+    flex: 1;
     font-family: var(--mono);
     font-size: 0.8rem;
     letter-spacing: 0.16em;
     color: var(--ink);
-    padding: 1.4rem 2.4rem;
+    padding: 1.4rem 0;
     text-align: center;
     border-right: 1px solid var(--border);
     transition: background 0.2s, color 0.2s, letter-spacing 0.2s;
@@ -454,7 +456,6 @@ main {
     text-decoration: none;
     border: 1px solid var(--border);
     padding: 1.4rem 0;
-    background: var(--soft);
     transition: background 0.2s, color 0.2s, letter-spacing 0.2s;
 }
 
