@@ -546,7 +546,7 @@ main {
    ABOUT
    ═══════════════════════════════════════════════════════════════════════════ */
 .about-corner {
-    width: 100%;
+    max-width: 52%;
 }
 
 .about-corner .section-subtitle {
@@ -1047,7 +1047,7 @@ blockquote {
     .about-grid { grid-template-columns: 1fr; gap: 3.5rem; }
     .manifesto-grid { grid-template-columns: 1fr; max-width: 100%; }
 
-    .about-corner { max-width: 100%; }
+    .about-corner { max-width: 100% !important; }
 }
 
 @media (max-width: 640px) {
