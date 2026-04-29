@@ -233,40 +233,44 @@ main {
     opacity: 0.6;
 }
 
-.hero-title-block {
+.hero-group {
     display: inline-flex;
     flex-direction: column;
     align-items: stretch;
     align-self: flex-start;
-    position: relative;
-    padding: 14px;
     margin-top: auto;
     margin-bottom: 2rem;
 }
 
-.hero-title-block::before {
+.hero-title-block {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    padding: 14px;
+}
+
+.hero-title-block::before,
+.hero-title-block::after {
     content: '';
     position: absolute;
     width: 24px;
     height: 24px;
     opacity: 0.45;
+}
+
+.hero-title-block::before {
     top: 0;
     left: 0;
     border-top: 1px solid var(--ink);
     border-left: 1px solid var(--ink);
 }
 
-.hero-links::after {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    opacity: 0.45;
+.hero-title-block::after {
     bottom: 0;
     right: 0;
     border-bottom: 1px solid var(--ink);
     border-right: 1px solid var(--ink);
-    pointer-events: none;
 }
 
 /* ── Corner brackets for content sections ─────────────────────────────────── */
@@ -414,7 +418,6 @@ main {
 /* Hero nav links */
 .hero-links {
     display: flex;
-    position: relative;
     margin-top: 2rem;
     border: 1px solid var(--border);
 }
