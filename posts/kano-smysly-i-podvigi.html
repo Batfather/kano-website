@@ -96,10 +96,15 @@
             margin: 2.5rem 0 3rem;
         }
 
+        .post-img .photo-wrap {
+            overflow: hidden;
+            border: 1px solid var(--border);
+            max-height: 480px;
+        }
+
         .post-img img {
             width: 100%;
             display: block;
-            border: 1px solid var(--border);
             filter: grayscale(50%) brightness(1.02) contrast(0.98);
             max-height: 480px;
             object-fit: cover;
@@ -107,8 +112,6 @@
             transform: scale(1.18);
             transform-origin: center 20%;
         }
-
-        .post-img { overflow: hidden; }
 
         .post-img figcaption {
             font-family: var(--mono);
@@ -200,7 +203,9 @@
                 </p>
 
                 <figure class="post-img">
-                    <img src="../public/photo.jpg" alt="Евгений Кольцов">
+                    <div class="photo-wrap">
+                        <img src="../public/photo.jpg" alt="Евгений Кольцов">
+                    </div>
                     <figcaption>ЕВГЕНИЙ КОЛЬЦОВ · KANO.STUDIO</figcaption>
                 </figure>
 
