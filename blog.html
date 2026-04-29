@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KANO.STUDIO — Блог</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="public/hand.png">
+    <link rel="stylesheet" href="kano.css">
+    <style>
+        .blog-hero {
+            padding: 3rem 2rem 3.5rem 4rem;
+            border-bottom: 1px solid var(--ink);
+            background-color: var(--bg);
+            background-image:
+                linear-gradient(rgba(128,128,128,0.09) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(128,128,128,0.09) 1px, transparent 1px);
+            background-size: 80px 80px;
+            background-attachment: fixed;
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+        }
+
+        /* ── Post list ─────────────────────────────────────────────────────── */
+        .post-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .post-item {
+            border-bottom: 1px solid var(--border);
+            transition: background 0.18s;
+        }
+
+        .post-item:last-child {
+            border-bottom: none;
+        }
+
+        .post-item a {
+            display: grid;
+            grid-template-columns: 120px 1fr auto;
+            align-items: baseline;
+            gap: 2rem;
+            padding: 2.2rem 4rem;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .post-item:hover { background: var(--soft); }
+
+        .post-date {
+            font-family: var(--mono);
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            opacity: 0.7;
+            white-space: nowrap;
+        }
+
+        .post-info { min-width: 0; }
+
+        .post-tag {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 0.55rem;
+            letter-spacing: 0.14em;
+            color: var(--accent);
+            margin-bottom: 0.4rem;
+        }
+
+        .post-title {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin-bottom: 0.5rem;
+        }
+
+        .post-lead {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.6;
+            font-weight: 300;
+            max-width: 640px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .post-arrow {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            opacity: 0.35;
+            transition: opacity 0.18s, transform 0.18s;
+            align-self: center;
+        }
+
+        .post-item:hover .post-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 640px) {
+            .blog-hero { padding: 2rem 1.5rem 3rem; }
+            .post-item a {
+                grid-template-columns: 1fr;
+                gap: 0.6rem;
+                padding: 1.8rem 1.5rem;
+            }
+            .post-arrow { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <img src="public/hand.png" alt="Kano" class="logo-hand">
+            <span>KANO.STUDIO</span>
+        </a>
+        <nav class="main-nav">
+            <a href="index.html#about"    data-i18n="nav_about">О СТУДИИ</a>
+            <a href="index.html#epher"    data-i18n="nav_epher">МАНИФЕСТ</a>
+            <a href="index.html#services" data-i18n="nav_services">УСЛУГИ</a>
+            <a href="index.html#process"  data-i18n="nav_process">ПРОЦЕСС</a>
+            <a href="portfolio.html"      data-i18n="nav_portfolio">ПОРТФОЛИО</a>
+            <a href="blog.html"           class="nav-active" data-i18n="nav_blog">БЛОГ</a>
+            <a href="index.html#contact"  data-i18n="nav_contact">КОНТАКТЫ</a>
+            <button class="lang-btn" id="langToggle">EN</button>
+            <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">☽</button>
+        </nav>
+        <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span>
+        </button>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html#about"    onclick="closeMobile()">О СТУДИИ</a>
+        <a href="index.html#epher"    onclick="closeMobile()">МАНИФЕСТ</a>
+        <a href="index.html#services" onclick="closeMobile()">УСЛУГИ</a>
+        <a href="index.html#process"  onclick="closeMobile()">ПРОЦЕСС</a>
+        <a href="portfolio.html"      onclick="closeMobile()">ПОРТФОЛИО</a>
+        <a href="blog.html"           onclick="closeMobile()">БЛОГ</a>
+        <a href="index.html#contact"  onclick="closeMobile()">КОНТАКТЫ</a>
+    </div>
+
+    <main>
+
+        <section class="blog-hero">
+            <div class="section-meta">
+                <span class="section-label">[~]</span>
+                <span class="section-name">KANO.STUDIO</span>
+                <span class="section-count">ЗАПИСИ</span>
+            </div>
+            <h1>Блог</h1>
+        </section>
+
+        <!-- ═══ POST LIST ════════════════════════════════════════════════════ -->
+        <ul class="post-list">
+            <!-- посты появятся здесь -->
+        </ul>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-logo">
+            <img src="public/hand.png" alt="Kano" class="logo-hand">
+            <span>KANO.STUDIO</span>
+        </div>
+        <div class="footer-bottom">
+            <span id="footer-year"></span> KANO.STUDIO — <span data-i18n="footer_rights">ВСЕ ПРАВА ЗАЩИЩЕНЫ</span>
+        </div>
+    </footer>
+
+    <script src="kano.js"></script>
+</body>
+</html>
