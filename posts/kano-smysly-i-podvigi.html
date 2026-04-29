@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kano. смыслы и подвиги — KANO.STUDIO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../public/hand.png">
+    <link rel="stylesheet" href="../kano.css">
+    <style>
+        .post-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 4rem 2rem 8rem;
+        }
+
+        .post-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--mono);
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            opacity: 0.6;
+            margin-bottom: 3rem;
+            transition: opacity 0.2s;
+        }
+        .post-back:hover { opacity: 1; }
+
+        .post-header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-family: var(--mono);
+            font-size: 0.58rem;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            opacity: 0.6;
+            margin-bottom: 1.8rem;
+        }
+
+        .post-meta-tag { color: var(--accent); opacity: 1; }
+
+        .post-kicker {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.18em;
+            color: var(--accent);
+            opacity: 0.8;
+            text-transform: lowercase;
+            margin-bottom: 0.75rem;
+        }
+
+        .post-title {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.02;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-body {
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+
+        .post-body p {
+            margin-bottom: 1.8rem;
+            color: var(--muted);
+            font-weight: 300;
+        }
+
+        .post-body blockquote {
+            border-left: 2px solid var(--accent);
+            margin: 3rem 0;
+            padding: 0.25rem 0 0.25rem 2rem;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--ink);
+            line-height: 1.65;
+            font-weight: 300;
+        }
+
+        .post-body .term {
+            font-family: var(--mono);
+            font-size: 0.9em;
+            letter-spacing: 0.04em;
+            color: var(--ink);
+        }
+
+        .post-footer-nav {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post-footer-nav a {
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .post-footer-nav a:hover { opacity: 1; }
+
+        @media (max-width: 640px) {
+            .post-wrap { padding: 2.5rem 1.5rem 5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="../index.html" class="logo">
+            <img src="../public/hand.png" alt="Kano" class="logo-hand">
+            <span>KANO.STUDIO</span>
+        </a>
+        <nav class="main-nav">
+            <a href="../index.html#about"    data-i18n="nav_about">О СТУДИИ</a>
+            <a href="../index.html#epher"    data-i18n="nav_epher">МАНИФЕСТ</a>
+            <a href="../index.html#services" data-i18n="nav_services">УСЛУГИ</a>
+            <a href="../index.html#process"  data-i18n="nav_process">ПРОЦЕСС</a>
+            <a href="../portfolio.html"      data-i18n="nav_portfolio">ПОРТФОЛИО</a>
+            <a href="../blog.html"           class="nav-active" data-i18n="nav_blog">БЛОГ</a>
+            <a href="../index.html#contact"  data-i18n="nav_contact">КОНТАКТЫ</a>
+            <button class="lang-btn" id="langToggle">EN</button>
+            <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">☽</button>
+        </nav>
+        <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span>
+        </button>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="../index.html#about"    onclick="closeMobile()">О СТУДИИ</a>
+        <a href="../index.html#epher"    onclick="closeMobile()">МАНИФЕСТ</a>
+        <a href="../index.html#services" onclick="closeMobile()">УСЛУГИ</a>
+        <a href="../index.html#process"  onclick="closeMobile()">ПРОЦЕСС</a>
+        <a href="../portfolio.html"      onclick="closeMobile()">ПОРТФОЛИО</a>
+        <a href="../blog.html"           onclick="closeMobile()">БЛОГ</a>
+        <a href="../index.html#contact"  onclick="closeMobile()">КОНТАКТЫ</a>
+    </div>
+
+    <main>
+        <div class="post-wrap">
+
+            <a href="../blog.html" class="post-back">← БЛОГ</a>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-meta-tag">СТУДИЯ · МАНИФЕСТ</span>
+                    <span>29 АПР 2026</span>
+                </div>
+                <p class="post-kicker">kano.</p>
+                <h1 class="post-title">смыслы и подвиги</h1>
+            </header>
+
+            <div class="post-body">
+
+                <p>Итак, всегда трепетно писать открывающий пост, закладывающий начало чему-то новому и интересному. Всегда хочется подобрать правильные слова, чтобы выразить то невыразимое, что я чувствую по отношению к своему детищу. Но так как в простоте заложен самый глубокий смысл — я начну с простого.</p>
+
+                <p>Kano Studio образовалась как результат моего личного потока идей, болей, экспериментов, разработок, исследований и жажды создавать. Я видел и продолжаю видеть как меняется моя индустрия, как развиваются технологии и как рушатся и создаются системы вокруг меня. Я продолжаю наблюдать за тем, какие ценности вкладывают в себя компании и отдельные представители индустрии, совершая стратегические выборы и разрабатывая свои продукты. И в этом наблюдении у меня постепенно складывалось своё понимание того, какими должны быть технологии, и в частности AI — где их действительное место, и ради чего мы — технологи — вообще всё это делаем.</p>
+
+                <blockquote>Делать большее меньшим. Искать те зоны, где технология действительно нужна человеку и может встать на своё законное место.</blockquote>
+
+                <p><span class="term">Epher AI</span> — это внутренняя философия kano. Не ради той бешеной пляски, что происходит сейчас в мире вокруг данных технологий, а ради реального высвобождения: времени, внимания, энергии. Чтобы человек мог больше быть собой и меньше тратить себя на то, что машина может сделать лучше. И более того — расширить свои границы и возможности, открыть новое поле для экспериментов в симбиозе с искусственным интеллектом.</p>
+
+                <p><span class="term">Sustainability</span> — я использую это слово именно в английском эквиваленте, потому что слышу в нём то, что стараюсь нести сам своей деятельностью — устойчивость в жизни, в работе, в развитии нас как общества, в том как мы строим будущее и самое главное — наше настоящее. И я считаю, что настоящий подвиг совершится тогда, когда наше общество достигнет максимально возможного статуса устойчивости и процветания, несмотря на среду текущей повышенной нестабильности.</p>
+
+                <p>Здесь я буду писать о том, что мы создаём и почему именно так. О решениях, об экспериментах, о вещах которые не сработали и о вещах которые удивили. Обо всём том, что так или иначе имеет отношение к направлению моей технологической деятельности и всей работе студии в первую очередь.</p>
+
+            </div>
+
+            <nav class="post-footer-nav">
+                <a href="../blog.html">← ВСЕ ЗАПИСИ</a>
+                <a href="../index.html#contact">ОБСУДИТЬ ПРОЕКТ →</a>
+            </nav>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-logo">
+            <img src="../public/hand.png" alt="Kano" class="logo-hand">
+            <span>KANO.STUDIO</span>
+        </div>
+        <div class="footer-bottom">
+            <span id="footer-year"></span> KANO.STUDIO — <span data-i18n="footer_rights">ВСЕ ПРАВА ЗАЩИЩЕНЫ</span>
+        </div>
+    </footer>
+
+    <script src="../kano.js"></script>
+</body>
+</html>
