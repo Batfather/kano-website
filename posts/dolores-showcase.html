@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolores. Showcase. — KANO.STUDIO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Martian+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../public/hand.png">
+    <link rel="stylesheet" href="../kano.css">
+    <style>
+        .post-wrap {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 4rem 2rem 8rem;
+        }
+
+        .post-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: var(--mono);
+            font-size: 0.6rem;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            opacity: 0.6;
+            margin-bottom: 3rem;
+            transition: opacity 0.2s;
+        }
+        .post-back:hover { opacity: 1; }
+
+        .post-header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-family: var(--mono);
+            font-size: 0.58rem;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            opacity: 0.6;
+            margin-bottom: 1.8rem;
+        }
+
+        .post-meta-tag { color: var(--accent); opacity: 1; }
+
+        .post-title {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.02;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-title-brand { color: var(--accent); }
+
+        .post-body {
+            font-size: 1.05rem;
+            line-height: 1.85;
+        }
+
+        .post-body p {
+            margin-bottom: 1.8rem;
+            color: var(--muted);
+            font-weight: 300;
+        }
+
+        .post-body blockquote {
+            border-left: 2px solid var(--accent);
+            margin: 3rem 0;
+            padding: 0.25rem 0 0.25rem 2rem;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--ink);
+            line-height: 1.65;
+            font-weight: 300;
+        }
+
+        .post-body .term {
+            font-family: var(--mono);
+            font-size: 0.9em;
+            letter-spacing: 0.04em;
+            color: var(--ink);
+        }
+
+        /* Image block */
+        .post-img {
+            margin: 2.5rem 0 3rem;
+        }
+
+        .post-img img {
+            width: 100%;
+            display: block;
+            border: 1px solid var(--border);
+        }
+
+        .post-img figcaption {
+            font-family: var(--mono);
+            font-size: 0.58rem;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            opacity: 0.5;
+            margin-top: 0.75rem;
+        }
+
+        .post-footer-nav {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .post-footer-nav a {
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+
+        .post-footer-nav a:hover { opacity: 1; }
+
+        @media (max-width: 640px) {
+            .post-wrap { padding: 2.5rem 1.5rem 5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <a href="../index.html" class="logo">
+            <img src="../public/hand.png" alt="Kano" class="logo-hand">
+            <span>KANO.STUDIO</span>
+        </a>
+        <nav class="main-nav">
+            <a href="../index.html#about"    data-i18n="nav_about">О СТУДИИ</a>
+            <a href="../index.html#epher"    data-i18n="nav_epher">МАНИФЕСТ</a>
+            <a href="../index.html#services" data-i18n="nav_services">УСЛУГИ</a>
+            <a href="../index.html#process"  data-i18n="nav_process">ПРОЦЕСС</a>
+            <a href="../projects.html"       data-i18n="nav_portfolio">ПРОЕКТЫ</a>
+            <a href="../blog.html"           class="nav-active" data-i18n="nav_blog">БЛОГ</a>
+            <a href="../index.html#contact"  data-i18n="nav_contact">КОНТАКТЫ</a>
+            <button class="lang-btn" id="langToggle">EN</button>
+            <button class="theme-btn" id="themeToggle" aria-label="Toggle theme">☽</button>
+        </nav>
+        <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span>
+        </button>
+    </header>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="../index.html#about"    onclick="closeMobile()">О СТУДИИ</a>
+        <a href="../index.html#epher"    onclick="closeMobile()">МАНИФЕСТ</a>
+        <a href="../index.html#services" onclick="closeMobile()">УСЛУГИ</a>
+        <a href="../index.html#process"  onclick="closeMobile()">ПРОЦЕСС</a>
+        <a href="../projects.html"       onclick="closeMobile()">ПРОЕКТЫ</a>
+        <a href="../blog.html"           onclick="closeMobile()">БЛОГ</a>
+        <a href="../index.html#contact"  onclick="closeMobile()">КОНТАКТЫ</a>
+    </div>
+
+    <main>
+        <div class="post-wrap">
+
+            <a href="../blog.html" class="post-back">← БЛОГ</a>
+
+            <header class="post-header">
+                <div class="post-meta">
+                    <span class="post-meta-tag">ПРОЕКТ · SHOWCASE</span>
+                    <span>29 АПР 2026</span>
+                </div>
+                <h1 class="post-title">
+                    <span class="post-title-brand">Dolores.</span> Showcase.
+                </h1>
+            </header>
+
+            <div class="post-body">
+
+                <p>
+                    У меня всегда была мечта иметь личного помощника-робота. Такого, какого
+                    вы видели в кино — Железный Человек, Космическая Одиссея 2001 и многие другие.
+                    С развитием ИИ в последние годы мы стали приближаться к воплощению этой идеи
+                    в реальность. На рынке стало появляться десятки, а то и сотни «обёрток» вокруг
+                    ChatGPT, тысячи репозиториев так называемых Jarvis, десятки тысяч чат-ботов.
+                    Сами производители LLM стали встраивать такой функционал в свои продукты
+                    (Claude, Workspace). Стали появляться агентные сети (OpenClaw, CrewAI) —
+                    и росту этому нет предела.
+                </p>
+
+                <p>
+                    Перепробовав все возможные комбинации из LLM, агентов и сторонних сервисов,
+                    меня по-прежнему не устраивало, что все их нужно дорабатывать и подстраивать
+                    под мои нужды. Никто из них не мог так нативно встроиться в мой workflow,
+                    как мне хотелось бы. И у многих был чёрный ящик под капотом — это не позволяло
+                    мне чётко знать и видеть как они устроены и иметь полный контроль
+                    над их поведением.
+                </p>
+
+                <p>
+                    Мечта, описанная мною выше, никуда не исчезла — так что в совокупности
+                    этих факторов возникла Долорес. Мой персональный ассистент, заточенный
+                    и созданный исключительно под меня и мои рабочие процессы. Которого я могу
+                    изменять, развивать и внедрять в точности так, как мне нужно, имея полный
+                    контроль над ним.
+                </p>
+
+                <p>
+                    В эпоху вайб-кодинга эта задумка реализовалась намного быстрее. Более того —
+                    сейчас Долорес учится сама писать код и создавать решения. Под её капотом
+                    постепенно создаётся такая же агентная сеть, которая используется мною
+                    в разработке и создании проектов, над которыми я тружусь.
+                </p>
+
+                <figure class="post-img">
+                    <img src="../public/Dolores.png" alt="Dolores — персональный ассистент">
+                    <figcaption>DOLORES · ПЕРСОНАЛЬНЫЙ АССИСТЕНТ</figcaption>
+                </figure>
+
+                <blockquote>
+                    Я не хотел ещё один инструмент куда нужно заходить.
+                    Я хотел чтобы она была рядом — в том же потоке где и я.
+                </blockquote>
+
+                <p>
+                    Долорес живёт сразу везде где я работаю — голосом через Mac, текстом
+                    в Telegram, в браузере если нужен большой контекст. Это было принципиально:
+                    я не хотел ещё один инструмент куда нужно заходить. Я хотел чтобы она
+                    была рядом — в том же потоке где и я.
+                </p>
+
+                <p>
+                    Но главное что отличает её от всего что я пробовал раньше — она меня помнит.
+                    Не в рамках одного разговора, а по-настоящему. После каждого диалога она
+                    в фоне анализирует что было сказано и сохраняет важное. Факты обо мне,
+                    о моих проектах, о том как я думаю и работаю. И с каждым разговором этот слой
+                    становится глубже. Это и есть то нативное встраивание в workflow, которого
+                    мне так не хватало во всех готовых решениях.
+                </p>
+
+                <p>
+                    Дальше — инструменты. Я постоянно расширяю то что она умеет: управление
+                    календарём, создание документов, поиск, заметки, дайджест новостей, анализ
+                    файлов и фото. Отдельно работает <span class="term">Архивариус</span> —
+                    вложенный агент который ведёт мою личную базу знаний. Создаёт карточки,
+                    индексирует, находит нужное по смыслу. Это моя личная вики,
+                    которая пишет себя сама.
+                </p>
+
+                <p>
+                    Более того — сейчас Долорес учится сама писать код и создавать решения.
+                    Под её капотом постепенно вырастает та же агентная сеть, которую я использую
+                    во всех своих проектах. Система начинает участвовать в собственном развитии.
+                </p>
+
+                <p>
+                    Ну и в заключении — это не финальная версия. Это процесс. Я не «сделал
+                    ассистента» и не поставил галочку. Я строю что-то что растёт вместе со мной —
+                    и куда это придёт, я сам пока не до конца знаю.
+                </p>
+
+            </div>
+
+            <nav class="post-footer-nav">
+                <a href="../blog.html">← ВСЕ ЗАПИСИ</a>
+                <a href="../index.html#contact">ОБСУДИТЬ ПРОЕКТ →</a>
+            </nav>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-logo">
+            <img src="../public/hand.png" alt="Kano" class="logo-hand">
+            <span>KANO.STUDIO</span>
+        </div>
+        <div class="footer-bottom">
+            <span id="footer-year"></span> KANO.STUDIO — <span data-i18n="footer_rights">ВСЕ ПРАВА ЗАЩИЩЕНЫ</span>
+        </div>
+    </footer>
+
+    <script src="../kano.js"></script>
+</body>
+</html>
